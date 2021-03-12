@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+	<link rel="stylesheet" href="todo.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="todo-header">
+			<h1>To-Do List</h1>
+		</div>
+		<div class="todo-form">
+			<form>
+				<input id="todo-input" type="text" placeholder="Ide írd a mai tennivalóidat..." autofocus>
+				<button class="add-button" type="submit" onclick="event.preventDefault(); create(title)">Létrehozás</button>
+			</form>
+		</div>
+		<div id="todos"></div>
+		<div id="no-todos">Nincsenek tennivalóid, dobj hozzá párat...</div>
+	</div>
+	<script src="todo.js"></script>
+</body>
+</html>
