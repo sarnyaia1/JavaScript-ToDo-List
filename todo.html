@@ -15,8 +15,10 @@
 		</div>
 		<div class="todo-form">
 			<form>
-				<input id="todo-input" type="text" placeholder="Ide írd a mai tennivalóidat..." autofocus>
-				<input id="todo-input" type="datetime-local">
+				<label for="input-range">Mennyire sürgős a teendő?</label>  
+				<input id="input-range" class="input-field" type="range">
+				<input id="todo-input" class="input-field" type="text" placeholder="Ide írd a mai tennivalóidat..." autofocus>
+				<input id="input-date" class="input-field" type="datetime-local">
 				<button class="add-button" type="submit" onclick="event.preventDefault(); create(title)">Létrehozás</button>
 			</form>
 		</div>
@@ -46,8 +48,8 @@
 				  <div class="event-desc" id="today-event">
 					Tesztesemény
 				  </div>
-				  <div class="event-time">
-					d.u 1-től d.u 3-ig
+				  <div class="event-desc" id="event-urgency">
+					Sürgősség
 				  </div>
 				</div>
 			  </td>
@@ -67,24 +69,6 @@
 			  </td>
 			  <td class="day">
 				<div class="date">2</div>
-				<div class="event">
-				  <div class="event-desc">
-					Valami esemény
-				  </div>
-		  
-				  <div class="event-time">
-					1-kor
-				  </div>
-				</div>
-				<div class="event">
-				  <div class="event-desc">
-					Valami másik esemény
-				  </div>
-		  
-				  <div class="event-time">
-					2kor
-				  </div>
-				</div>
 			  </td>
 			</tr>
 			
@@ -103,14 +87,6 @@
 			  </td>
 			  <td class="day">
 				<div class="date">7</div>
-				<div class="event">
-				  <div class="event-desc">
-					Valami esemény
-				  </div>
-				  <div class="event-time">
-					3kor
-				  </div>
-				</div>
 			  </td>
 			  <td class="day">
 				<div class="date">8</div>
@@ -134,14 +110,6 @@
 			  </td>
 			  <td class="day">
 				<div class="date">14</div>
-				<div class="event">
-				  <div class="event-desc">
-					Valami esemény
-				  </div>
-				  <div class="event-time">
-					4kor
-				  </div>
-				</div>
 			  </td>
 			  <td class="day">
 				<div class="date">15</div>
@@ -169,14 +137,6 @@
 			  </td>
 			  <td class="day">
 				<div class="date">22</div>
-				<div class="event">
-				  <div class="event-desc">
-					Valami esemény
-				  </div>
-				  <div class="event-time">
-					5kor
-				  </div>
-				</div>
 			  </td>
 			  <td class="day">
 				<div class="date">23</div>
@@ -188,14 +148,6 @@
 			  </td>
 			  <td class="day">
 				<div class="date">25</div>
-				<div class="event">
-				  <div class="event-desc">
-					Valami esemény
-				  </div>
-				  <div class="event-time">
-					6kor
-				  </div>
-				</div>
 			  </td>
 			  <td class="day">
 				<div class="date">26</div>
@@ -214,13 +166,11 @@
 			  </td>
 			</tr>
 			<tr>
-		  
 			  <td class="day">
 				<div class="date">31</div>
 			  </td>
 			  <td class="day ">
 				<div class="date">1</div>
-				<!-- Következő hónap -->
 			  </td>
 			  <td class="day ">
 				<div class="date">2</div>

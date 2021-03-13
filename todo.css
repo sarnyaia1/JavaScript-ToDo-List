@@ -9,6 +9,7 @@ body {
 	text-decoration: line-through;
 }
 
+
 .dot {
 	height: 10px;
 	width: 10px;
@@ -19,6 +20,18 @@ body {
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+/* szünetel
+#urgencyNum {
+	background-color: #00CED1;
+	color:rgb(221, 222, 230);
+	padding: 5px;
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+}
+*/
+
 
 .container {
 	margin: 0 auto;
@@ -47,7 +60,7 @@ body {
 .list-item-title {
 	width: calc(100% - 50px);
     display: inline-block;
-	margin-left: 16px;
+	margin-left: 15px;
 }
 
 
@@ -72,7 +85,7 @@ body {
 	color: #FFA07A;
 }
 
-#todo-input {
+.input-field {
 	margin: 5px;
 	width: 100%;
 	padding: 15px;
@@ -99,11 +112,8 @@ body {
 	border-radius: 10px;
 }
 
-/*    Naptár Stílus   */ 
+/*  ======  Naptár Stílusrész =====   */ 
 
-
-
-/* declare a 7 column grid on the table */
 table {
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -119,7 +129,7 @@ table {
 #calendar tr, #calendar tbody {
 	grid-column: 1 / -1;
 	display: grid;
-	grid-template-columns: repeat(7, 1fr);
+	grid-template-columns: repeat(7, 1fr);  /* 7egyforma részre felosztani */ 
 	width: 100%;
 }
 
@@ -130,13 +140,6 @@ caption {
 	font-weight: bold;
 	padding: 10px 0;
 }
-
-/* 	nem találtam
-#calendar a {
-	color: #8e352e;
-	text-decoration: none;
-}
-*/
 
 #calendar td, #calendar th {
 	padding: 5px;
@@ -165,20 +168,15 @@ caption {
 	flex-direction: column;
 }
 
-#calendar .days li:hover {
-	background: #d3d3d3;
-}
-
 #calendar .date {
 	text-align: center;
 	padding: 5px;
-	margin: auto;
 	margin-top: 5px;
+	margin-bottom: 5px;
 	background: #333;
 	color: #fff;
-	width: 80%;
-	height: 10%;
-	border-radius: 80%;
+	width: 10%;
+	border-radius: 50%;
 	flex: 0 0 auto;
 	align-self: flex-end;
 	font-size: 10px;
@@ -200,7 +198,10 @@ caption {
 #calendar .event-desc {
 	color: #666;
 	margin: 3px 0 7px 0;
-	text-decoration: none;	
+	text-decoration: none;
+	text-align: center;	
+	width: 90%;
+	font-weight: bold;
 }
 
 #calendar .day {
@@ -208,9 +209,7 @@ caption {
 	color: #666;
 }
 
-/* ============================
-				Mobile verzió
-   ============================*/
+/* ============================  Mobil verzió  ============================ */
 
 
 @media(max-width: 768px) {

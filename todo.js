@@ -1,15 +1,32 @@
-var inputField = document.getElementById('todo-input');
-var addButton = document.getElementsByClassName('add-button')[0];
-var noTodosDiv = document.getElementById('no-todos');
-var eventDescription = document.getElementById('today-event');
+const inputField = document.getElementById('todo-input');
+const inputRange = document.getElementById('input-range');   								//Sürgősség mértékével rendezés, minél fontosabb, annál magasabbra kerüljön a Listában???
+const addButton = document.getElementsByClassName('add-button')[0];
+const noTodosDiv = document.getElementById('no-todos');									
+const eventDescription = document.getElementById('today-event');
+const todoTime = document.getElementById('input-date');
+const eventUrgency = document.getElementById('event-urgency');							//Feladat megadása után resetelje a fontossági mércét és dátumot is
+		
 
-addButton.addEventListener('click', () => {
-	eventDescription.innerHTML = inputField.value; 											// valamiért nem akar megjelenni
+// Feladat naptáron való megjelenítése
+addButton.addEventListener('click', () => {									// valamiért nem akarja megjeleniteni az inputField.value-t  megjelenni ("Feladat helyére")!!!!!
+	eventDescription.innerHTML = "Feladat: " + todoTime.value; 				// a Feladat + dátum helyett jó lenne mondjuk a feladat maga, vagy annak a sorszáma
+});																			
+
+addButton.addEventListener('click', () => {									//Azt is be kellene állítani, hogy újat hozzon létre, ne egyet írjon felül
+	if(inputRange.value < 26) {												// = > ez mondjuk elég komplex, mert nem tudom hogy kapcsolni az aktuális naphoz (talán td elemre click event és létrehozás..)
+		eventUrgency.innerHTML = "Ráérős"; 	
+	} else if(inputRange.value > 25 && inputRange.value < 51)	{
+		eventUrgency.innerHTML = "Nem sürgős";
+	} else if(inputRange.value > 50 && inputRange.value < 76)	{
+		eventUrgency.innerHTML = "Fontos";
+	} else if(inputRange.value > 75)	{
+		eventUrgency.innerHTML = "Azonnali";
+	}									
 });
-
+												
 
 // Aktuális dátum megjelenítése naptáron
-var today = new Date();
+let today = new Date();
 document.getElementById('today').innerHTML = today.toDateString();
 
 
@@ -157,7 +174,6 @@ function create(title) {
 
 	if (title.length > 2) {
 		todoController.createTodo(title);
-		
 		resetInputField();
 	} else {
 		alert('Legalább 3 karaktert írj be!');	
