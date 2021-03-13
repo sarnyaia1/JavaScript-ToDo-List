@@ -1,6 +1,17 @@
 var inputField = document.getElementById('todo-input');
 var addButton = document.getElementsByClassName('add-button')[0];
 var noTodosDiv = document.getElementById('no-todos');
+var eventDescription = document.getElementById('today-event');
+
+addButton.addEventListener('click', () => {
+	eventDescription.innerHTML = inputField.value; 											// valamiért nem akar megjelenni
+});
+
+
+// Aktuális dátum megjelenítése naptáron
+var today = new Date();
+document.getElementById('today').innerHTML = today.toDateString();
+
 
 // inputField.addEventListener('keyup', function(event) {
 	// if (event.target.value.length < 3) {

@@ -16,6 +16,7 @@
 		<div class="todo-form">
 			<form>
 				<input id="todo-input" type="text" placeholder="Ide írd a mai tennivalóidat..." autofocus>
+				<input id="todo-input" type="datetime-local">
 				<button class="add-button" type="submit" onclick="event.preventDefault(); create(title)">Létrehozás</button>
 			</form>
 		</div>
@@ -24,7 +25,7 @@
 	</div>
 	<div>
 		<table id="calendar">
-			<caption>Március 2021</caption>
+			<caption id="today"></caption>
 			<tr class="het-napjai">
 			  <th scope="col">Hetfő</th>
 			  <th scope="col">Kedd</th>
@@ -42,8 +43,8 @@
 			  <td class="day">
 				<div class="date">28</div>
 				<div class="event">
-				  <div class="event-desc">
-					Valami esemény
+				  <div class="event-desc" id="today-event">
+					Tesztesemény
 				  </div>
 				  <div class="event-time">
 					d.u 1-től d.u 3-ig
