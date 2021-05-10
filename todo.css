@@ -21,21 +21,11 @@ body {
 	transform: translateY(-50%);
 }
 
-/* szünetel
-#urgencyNum {
-	background-color: #00CED1;
-	color:rgb(221, 222, 230);
-	padding: 5px;
-	height: 10px;
-	width: 10px;
-	border-radius: 50%;
-}
-*/
-
+/* ========== Feladatok =============== */ 
 
 .container {
 	margin: 0 auto;
-	width: 80%; 							/* átírtam 400pixelről, hogy reszponzív legyen*/
+	width: 80%; 							
 	text-align: center;
 }
 
@@ -52,7 +42,7 @@ body {
 }
 
 #todos {
-	width: 80%; 								/* átírtam 400pixelről, hogy reszponzív legyen*/
+	width: 80%; 								
 	margin: 60px auto;
 	text-align: left;
 }
@@ -112,135 +102,50 @@ body {
 	border-radius: 10px;
 }
 
-/*  ======  Naptár Stílusrész =====   */ 
+#no-todos {
+	margin: 2em;
+	padding: 0.5em;
+	background-color: white;
+	border-radius: 0.8em;
+}
 
-table {
-	padding-top: 100px;
-	padding-bottom: 100px;
+
+/* ================= Naptár beállítások ============= */
+
+.calendar-container {
+	display: flex;
+	margin-bottom: 2em;
 }
 
 #calendar {
-	width: 90%;
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	margin: auto;
-}
-
-#calendar tr, #calendar tbody {
-	grid-column: 1 / -1;
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);  /* 7egyforma részre felosztani */ 
 	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-caption {
-	text-align: center;
-	grid-column: 1 / -1;
-	font-size: 130%;
-	font-weight: bold;
-	padding: 10px 0;
+#calendar-todos, #search-todos {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em;
+	background-color: white;
+	border-radius: 0.8em;
+	height: auto;
+	font-weight: 800;
+	width: 80%;
 }
 
-#calendar td, #calendar th {
-	padding: 5px;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-}
-
-#calendar .het-napjai {
-	background: #8e352e;  
-}
-
-
-#calendar .het-napjai th {
-	text-align: center;
-	text-transform: uppercase;
-	line-height: 20px;
-	border: none !important;
-	padding: 10px 6px;
-	color: #fff;
-	font-size: 13px;
-}
-
-#calendar td {
-	min-height: 180px;
-	display: flex;
-	flex-direction: column;
-}
-
-#calendar .date {
-	text-align: center;
-	padding: 5px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	background: #333;
-	color: #fff;
-	width: 10%;
-	border-radius: 50%;
-	flex: 0 0 auto;
-	align-self: flex-end;
-	font-size: 10px;
-}
-
-#calendar .event {
-  flex: 0 0 auto;
-	font-size: 10px;
-	border-radius: 4px;
-	padding: 5px;
-	margin-bottom: 5px;
-	line-height: 14px;
-	background: #e4f2f2;
-	border: 1px solid #b5dbdc;
-	color: #009aaf;
-	text-decoration: none;
-}
-
-#calendar .event-desc {
-	color: #666;
-	margin: 3px 0 7px 0;
-	text-decoration: none;
-	text-align: center;	
-	width: 90%;
-	font-weight: bold;
-}
-
-#calendar .day {
-	background: #f5f5f5;
-	color: #666;
-}
 
 /* ============================  Mobil verzió  ============================ */
 
 
 @media(max-width: 768px) {
 
-#calendar .het-napjai, #calendar .other-month {
-	display: none;
-}
+	.calendar-container {
+		display: block;
+		justify-content: center;
+	}
 
-#calendar td {
-	width: 80%;
-	margin: auto;
-}
-
-#calendar li {
-	height: auto !important;
-	border: 1px solid #ededed;
-	width: 100%;
-	padding: 10px;
-	margin-bottom: -1px;
-}
-  
-#calendar, #calendar tr, #calendar tbody {
-grid-template-columns: 1fr;
-}
-  
-#calendar  tr {
-	grid-column: 1 / 2;
-}
-
-#calendar .date {
-	align-self: flex-start;
+	#calendar-todos {
+		margin-top: 12px;
 	}
 }
-
